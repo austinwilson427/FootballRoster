@@ -1,0 +1,22 @@
+﻿table.player_modal{
+
+    width: 100%;
+
+
+}
+
+table.player_modal td.player_pic{
+    text-align: center;
+    padding: 0;
+}
+
+
+table.player_modal td{
+    padding: 10px 0 10px 50px;
+}
+
+ul.error{
+    list-style: none;
+    color: red;
+    font-size: 20px;
+}

@@ -1,0 +1,52 @@
+﻿<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+        <table class="table table-hover">
+            <tr>
+                <th ng-click="vm.doSort('name')">Player</th>
+                <th ng-click="vm.doSort('pos')">Pos</th>
+                <th ng-click="vm.doSort('team')">Team</th>
+            </tr>
+            <tr ng-repeat="playerInfo in vm.playersAll | orderBy: vm.sortBy : vm.reverse">
+                <td><a href="#" ng-click="vm.showModal(playerInfo)">{{playerInfo.name}}</a></td>
+                <td>{{playerInfo.pos}}</td>
+                <td>{{playerInfo.team}}</td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+        <ul class="error">
+            <li ng-repeat="errors in vm.validationErrors">- {{errors}}</li>
+        </ul>
+        <form ng-submit="vm.savePlayer()">
+            <div class="form-group">
+                <label>Name</label>
+                <input class="form-control" type="text" ng-model="vm.playerDetails.name" />
+            </div>
+            <div class="form-group">
+                <label>Pos</label>
+                <input class="form-control" type="text" ng-model="vm.playerDetails.pos" />
+            </div>
+            <div class="form-group">
+                <label>Team</label>
+                <input class="form-control" type="text" ng-model="vm.playerDetails.team" />
+            </div>
+            <div class="form-group">
+                <label>Height</label>
+                <input class="form-control" type="text" ng-model="vm.playerDetails.height" />
+            </div>
+            <div class="form-group">
+                <label>Weight</label>
+                <input class="form-control" type="text" ng-model="vm.playerDetails.weight" />
+            </div>
+            <div class="form-group">
+                <label>Image Link</label>
+                <input class="form-control" type="text" ng-model="vm.playerDetails.imageUrl" />
+            </div>
+            <div class="form-group">
+                <input class="form-control btn btn-primary" type="submit" value="Save" />
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,78 @@
+﻿<div class="modal-header">
+    <h1>{{vm.data.name}}</h1>
+</div>
+<div class="modal-body">
+    <table class="player_modal">
+        <tr>
+            <td colspan="2" class="player_pic">
+                <img src="{{vm.data.imageUrl}}" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Team: {{vm.data.team}}
+            </td>
+            <td>
+                Height: {{vm.data.height}} in
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Position: {{vm.data.pos}}
+            </td>
+            <td>
+                Weight: {{vm.data.weight}} lbs
+            </td>
+        </tr>
+    </table>
+</div>
+<div ng-show="vm.showEdit==true" class="modal-body">
+    <form ng-submit="vm.savePlayer(); vm.closeModal();">
+        <div class="row form-group">
+            <div class="col-md-6">
+                <label>Name</label>
+                <input class="form-control" type="text" ng-model="vm.playerDetails.name" />
+            </div>
+            <div class="col-md-6">
+                <label>Pos</label>
+                <input class="form-control" type="text" ng-model="vm.playerDetails.pos" />
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-md-6">
+                <label>Team</label>
+                <input class="form-control" type="text" ng-model="vm.playerDetails.team" />
+            </div>
+            <div class="col-md-6">
+                <label>Image Link</label>
+                <input class="form-control" type="text" ng-model="vm.playerDetails.imageUrl" />
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-md-6">
+                <label>Height</label>
+                <input class="form-control" type="number" ng-model="vm.playerDetails.height" />
+            </div>
+            <div class="col-md-6">
+                <label>Weight</label>
+                <input class="form-control" type="number" ng-model="vm.playerDetails.weight" />
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-md-6">
+                <input class="form-control btn btn-primary" type="submit" value="Save" />
+            </div>
+            <div class="col-md-6">
+                <input class="form-control btn btn-danger" ng-click="vm.showEdit=false" value="Cancel" />
+            </div>
+
+
+
+        </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <button ng-click="vm.deletePlayer(vm.data.id, vm.data.name)" value="1" class="btn btn-danger">Delete</button>
+    <button ng-click="vm.showEdit=true; vm.getPlayer(vm.data.id)" class="btn btn-success">Edit</button>
+    <button class="btn btn-primary" ng-click="vm.closeModal()">Close</button>
+</div>
