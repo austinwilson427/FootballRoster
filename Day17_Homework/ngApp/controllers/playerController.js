@@ -58,9 +58,9 @@ var ModalController = (function () {
         this.$uibModalInstance.close();
         this.$route.reload();
     };
-    ModalController.prototype.savePlayer = function () {
+    ModalController.prototype.savePlayer = function (playerToSave) {
         var _this = this;
-        this.playerResource.save(this.playerDetails).$promise.then(function () {
+        this.playerResource.save(playerToSave).$promise.then(function () {
             _this.getPlayers();
             _this.closeModal();
         }).catch(function (error) {
@@ -87,3 +87,4 @@ var ModalController = (function () {
     };
     return ModalController;
 })();
+//# sourceMappingURL=playerController.js.map

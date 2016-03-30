@@ -78,9 +78,9 @@ class ModalController {
     }
 
 
-    public savePlayer() {
+    public savePlayer(playerToSave) {
 
-        this.playerResource.save(this.playerDetails).$promise.then(() => {
+        this.playerResource.save(playerToSave).$promise.then(() => {
             this.getPlayers();
             this.closeModal();
         }).catch((error) => {

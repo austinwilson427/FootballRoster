@@ -65,6 +65,7 @@ namespace Day17_Homework.API
         {
             //Find player to delete
             // This may work, need to check: var originalPlayer = get(id);
+            //Won't work bc return type isn't Player
             var playerToDelete = _dbresults.Players.Find(id);
 
             //Delete player
