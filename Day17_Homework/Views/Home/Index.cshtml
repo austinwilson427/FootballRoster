@@ -1,4 +1,4 @@
-﻿<html xmlns="http://www.w3.org/1999/xhtml" ng-app="MyApp">
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="MyApp">
 <head>
     <title>Day17_CodeFirst</title>
     <base href="/" />
@@ -9,12 +9,6 @@
 <body ng-controller="AccountController as account">
 
     <h1>My App</h1>
-    <div>
-        <a href="/">Home</a> /
-        <a href="/about">About</a> /
-        <a href="/login" ng-show="!account.isLoggedIn()">login</a>
-        <a href="#" ng-click="account.logout()" ng-show="account.isLoggedIn()">logout</a>
-    </div>
 
     <ng-view></ng-view>
 
